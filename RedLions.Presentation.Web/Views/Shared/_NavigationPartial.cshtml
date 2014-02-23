@@ -1,0 +1,46 @@
+﻿<nav class="navigation-bar">
+    <div class="navigation-bar-content">
+        <img id="redlions-logo" src="~/Content/Images/Banners/redlion_logo.png" />
+        <a class="element center-nav" href="@Url.Action("Index", "Home")">Home</a>
+        <span class="element-divider"></span>
+
+        <div class="element">
+            <a class="dropdown-toggle" href="#">Company</a>
+            <ul class="dropdown-menu" data-role="dropdown">
+                <li><a href="#">About Us</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Partnerships</a></li>
+            </ul>
+        </div>
+
+        <span class="element-divider"></span>
+
+        <div class="element">
+            <a class="dropdown-toggle" href="@Url.Action("Products", "Home")">Products</a>
+            <ul class="dropdown-menu" data-role="dropdown">
+                <li><a href="@Url.Action("Products", "Home")">All Products</a></li>
+                <li class="divider"></li>
+                <li><a href="@Url.Action("Beverages", "Home")">Healthy Beverages</a></li>
+                <li><a href="@Url.Action("Nutritions", "Home")">Nutritions</a></li>
+                <li><a href="@Url.Action("Personal", "Home")">Personal Care</a></li>
+                <li><a href="@Url.Action("Skin", "Home")">Skin Care</a></li>
+                <li><a href="#">Health Accessories</a></li>
+            </ul>
+        </div>
+
+        <span class="element-divider"></span>
+        <a class="element" href="@Url.Action("LocalBusiness", "Home")">Business</a>
+        <span class="element-divider"></span>
+        <button class="element">Events</button>
+
+        @{ Html.RenderPartial("_AccountPartial"); }
+    </div>
+</nav>
+
+<!-- 
+    Explicitly load the metro-dropdown.js here, because 
+    this partial view is reloaded when a user logs in, 
+    If we don't load this dropdown, 
+    we lose the jquery-hookups.
+     -->
+<script src="@Url.Content("~/Scripts/Metro/metro-dropdown.js")"></script>
